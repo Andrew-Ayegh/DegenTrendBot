@@ -1,0 +1,2 @@
+beautfulsoup4
+playwright
