@@ -84,4 +84,4 @@ Idea & strategy inputs by the Degen community. Built with the guidance of trader
 
 ## 📜 License
 
-This project is licensed under the MIT License.
+This project is licensed under The Prosperity Public License 3.0.0
