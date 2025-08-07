@@ -26,7 +26,7 @@ DegenTrendBot is a Telegram-based trend analysis tool that scrapes trending topi
 1. **Clone the repository**
 
 ```bash
-git clone https:/Andrew-Ayegh/github.com//DegenTrendBot.git
+git clone https://github.com/Andrew-Ayegh/DegenTrendBot.git
 cd DegenTrendBot
 ```
 
