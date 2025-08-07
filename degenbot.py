@@ -32,18 +32,17 @@ def run(playwright):
     #--------------Get the <ol> elemets that holds the 1-hour trends
     content_element = page.locator('//*[@id="timeline-container"]/div[1]/div[1]/ol').first
     ol_html = content_element.inner_html()  # Get HTML inside <ol>
-    # print(ol_html)
     
     # -------Create webpage BS4 instance
-    soup = BeautifulSoup(ol_html, 'html.parser')  # Parse the inner HTML
+    soup = BeautifulSoup(ol_html, 'html.parser')  
 
     #-------Extract list items
     items = soup.select("li span a")
     trends = [item.get_text(strip=True) for item in items]
-    # print(trends)
 
     # -------------trend full data
     trend_list = []
+    
     # # ----------simulating clicks to go into inner page for detailed scrape
     sub_trend = trends[15:19]
     for trend in sub_trend:    
@@ -59,7 +58,6 @@ def run(playwright):
 
         rank  = int(detail_list[0])
         trend_time = detail_list[3] 
-        # print(f"count:{tweet_count}\nrank:{rank}\ntrend-time:{trend_time}")
         details = {
             "trend": trend,
             "rank":rank, 
@@ -70,12 +68,6 @@ def run(playwright):
 
         
         page.get_by_role("button", name="Close popup").click()
-        # try:
-        #     page.get_by_text('Close').click() #----------Close ads if they appear
-        #     page.get_by_role("button", name="Close popup").click()
-            
-        # except:
-        #     pass
     pprint(trend_list)
     browser.close()
 with sync_playwright() as playwright:
